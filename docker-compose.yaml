@@ -37,6 +37,16 @@ services:
       - gpdb-src-volume:/gpdb-src
       - gpdb-scripts-volume:/gpdb-scripts
 
+  sdw3:
+    hostname: sdw3
+    image: gpdb6-multinode-cluster/gpdb-image
+    tty: true
+    networks:
+      - the-network
+    volumes:
+      - gpdb-src-volume:/gpdb-src
+      - gpdb-scripts-volume:/gpdb-scripts
+
 # The network that bridges all the containers
 networks:
   the-network:

@@ -1,8 +1,10 @@
 #! /bin/bash
 
 yum install -y epel-release
-yum install -y emacs-nox net-tools openssh-server openssh-clients python-devel
+yum install -y emacs-nox net-tools openssh-server openssh-clients python2-devel python2
 yum install -y python-pip
+
+ln -s /usr/bin/python2 /usr/bin/python
 
 pip install psutil==4.0.0 pyyaml==5.3.1
 

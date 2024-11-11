@@ -1,4 +1,4 @@
-FROM gcr.io/data-gpdb-public-images/gpdb6-centos7-build
+FROM gcr.io/data-gpdb-public-images/gpdb6-rocky8-test-multiarch
 
 COPY install-dependencies.sh /opt
 COPY setup-gpadmin.sh /opt
