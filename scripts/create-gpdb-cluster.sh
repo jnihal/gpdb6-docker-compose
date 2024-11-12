@@ -11,6 +11,8 @@ su gpadmin -c "
    gpinitsystem -a -c configs/clusterConfigFile -p configs/clusterConfigPostgresAddonsFile -h configs/hostfile
 "
 
+pip install behave
+
 # Create environment file
 cat > ~gpadmin/env.sh <<EOF
 #! /bin/bash
@@ -18,5 +20,11 @@ cat > ~gpadmin/env.sh <<EOF
 source /usr/local/gpdb/greenplum_path.sh
 export MASTER_DATA_DIRECTORY=/data/gpdata/qddir/gpseg-1
 export PGPORT=7000
+
+run_behave() {
+pushd /gpdb-src/gpMgmt/
+behave -w --no-skipped ./test/behave/mgmt_utils/
+popd
+}
 
 EOF

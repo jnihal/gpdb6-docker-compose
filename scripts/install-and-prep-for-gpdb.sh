@@ -2,7 +2,7 @@
 
 # Install GPDB
 cd /gpdb-src
-make install -s
+make install -s -j$(nproc)
 
 # Source GPDB and install pygresql
 source /usr/local/gpdb/greenplum_path.sh
